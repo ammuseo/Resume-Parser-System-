@@ -29,7 +29,7 @@ def main():
         if st.button("Upload"):
             if doc_file is not None:
                 # Save uploaded file to 'F:/tmp' folder.
-                save_folder = 'C:/Users/amuth/OneDrive/ammu/AI-course/mentornessproject/resumeparser/ResumeParsing/resumes'
+                save_folder = 'C:/Users/amuth/OneDrive/ammu/AI-course/mentornessproject/resumeparser/ResumeParsing/Resume-Parser-System-/resumes'
                 save_path = Path(save_folder, doc_file.name)
                 with open(save_path, mode='wb') as w:
                     w.write(doc_file.getvalue())
@@ -70,7 +70,7 @@ def main():
                     return num
                 return None
 
-        def file_selected(folder_path=r'C:/Users/amuth/OneDrive/ammu/AI-course/mentornessproject/resumeparser/ResumeParsing/resumes'):
+        def file_selected(folder_path=r'C:/Users/amuth/OneDrive/ammu/AI-course/mentornessproject/resumeparser/ResumeParsing/Resume-Parser-System-/resumes'):
             files=[]
             filenames=os.listdir(folder_path)
             files = ["select"] + filenames
@@ -79,7 +79,7 @@ def main():
             
             return os.path.join(folder_path, selected_filename)
         filename=file_selected()
-        if filename=="C:/Users/amuth/OneDrive/ammu/AI-course/mentornessproject/resumeparser/ResumeParsing/resumes\select":
+        if filename=="C:/Users/amuth/OneDrive/ammu/AI-course/mentornessproject/resumeparser/ResumeParsing/Resume-Parser-System-/resumes\select":
             st.write("")
         else:
             st.write("you selected '%s'" % os.path.basename(filename))
@@ -129,7 +129,7 @@ def main():
             st.write(firstname)
             lname=lastname.split(" ")
             st.write(lname[0])
-            csv_file=open(r'C:/Users/amuth/OneDrive/ammu/AI-course/mentornessproject/resumeparser/ResumeParsing/Contact_information.csv', 'a', newline='')
+            csv_file=open(r'C:/Users/amuth/OneDrive/ammu/AI-course/mentornessproject/resumeparser/ResumeParsing/Resume-Parser-System-/Contact_information.csv', 'a', newline='')
             csv_data=csv.writer(csv_file, delimiter=',')
             csv_data.writerow([firstname + ' ' + lname[0],  phone_number,  emails[0]])
             csv_file.close()
@@ -138,7 +138,7 @@ def main():
                 print(f"Phone Number: {phone_number}")
             if emails:
                 print(f"Email: {emails[0]}")
-            df=pd.read_csv(r'C:\Users\amuth\OneDrive\ammu\AI-course\mentornessproject\resumeparser\ResumeParsing\Contact_information.csv')
+            df=pd.read_csv(r'C:\Users\amuth\OneDrive\ammu\AI-course\mentornessproject\resumeparser\ResumeParsing\Resume-Parser-System-\Contact_information.csv')
             st.dataframe(df)
        #### end of read.py/
         ##st.write("browse")
